@@ -1,0 +1,17 @@
+steps:
+  # Step #1: Run Gitleaks to detect Secrets...
+  - name: 'zricethezav/gitleaks'
+    args:
+      - detect
+      - --source=/workspace
+      - --verbose
+      - --redact
+    id: gitleaks
+
+  # Step #2: [Optional] Just print a Success Message if Gitleaks passed...
+  - name: 'ubuntu'
+    args: ['echo', 'Gitleaks Scan passed. No Secrets found...']
+    waitFor: ['gitleaks']
+
+options:
+  logging: CLOUD_LOGGING_ONLY
