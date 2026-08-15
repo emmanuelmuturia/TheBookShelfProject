@@ -1,4 +1,4 @@
-# The Bookshelf Project
+# The BookShelf Project
 
 <div style="text-align: center;">
 
